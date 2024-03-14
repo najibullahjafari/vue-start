@@ -25,6 +25,6 @@ function toggle() {
     <p>{{ text }}</p>
     <button @click="toggle">Toggle</button>
     <p v-if="awesome">Vue is Awesome!🧨🎇</p>
-    <p v-else>Oh no!🧨🎇</p>
+    <p v-else>Oh no!🧨🎆🎇</p>
   </div>
 </template>
