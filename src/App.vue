@@ -3,6 +3,15 @@ import HelloWorld from './components/HelloWorld.vue';
 import TheWelcome from './components/TheWelcome.vue';
 import increment from './components/increment.vue';
 import listRendering from './components/listRendering.vue';
+import watcher from './components/watcher.vue';
+import props from './components/props.vue';
+import emitComponent from './components/emitComponent.vue';
+import { ref } from 'vue';
+import slot from './components/slots.vue';
+
+const greeting = 'Hello, Vue 3!';
+const childMsg = ref('no props passed to me');
+const msg = ref('slot from paranet');
 </script>
 
 <template>
@@ -21,9 +30,19 @@ import listRendering from './components/listRendering.vue';
   </header>
 
   <main>
-    <TheWelcome />
-    <increment />
-    <listRendering />
+    <div>
+      <div><TheWelcome /></div>
+      <div><increment /></div>
+      <div><listRendering /></div>
+      <div><watcher /></div>
+      <div></div>
+      <div><props :msg="greeting" /></div>
+      <div>
+        <emitComponent @response="(msg) => (childMsg = msg)" />
+        <p>{{ childMsg }}</p>
+      </div>
+      <slots>{{ msg }}</slots>
+    </div>
   </main>
 </template>
 
