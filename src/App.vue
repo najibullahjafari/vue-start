@@ -7,11 +7,11 @@ import watcher from './components/watcher.vue';
 import props from './components/props.vue';
 import emitComponent from './components/emitComponent.vue';
 import { ref } from 'vue';
-import slot from './components/slots.vue';
+import optionapiexample from './components/optionapi/optionapiexample.vue';
 
 const greeting = 'Hello, Vue 3!';
 const childMsg = ref('no props passed to me');
-const msg = ref('slot from paranet');
+const msg = ref('slot from parent');
 </script>
 
 <template>
@@ -30,8 +30,7 @@ const msg = ref('slot from paranet');
   </header>
 
   <main>
-    <div>
-      <div><TheWelcome /></div>
+    <div class="practice">
       <div><increment /></div>
       <div><listRendering /></div>
       <div><watcher /></div>
@@ -42,35 +41,15 @@ const msg = ref('slot from paranet');
         <p>{{ childMsg }}</p>
       </div>
       <slots>{{ msg }}</slots>
+      <div><optionapiexample /></div>
     </div>
   </main>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+<style>
+.practice {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px #888888;
 }
 </style>
